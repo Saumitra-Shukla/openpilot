@@ -85,6 +85,6 @@ COPY ./panda /tmp/openpilot/panda
 COPY ./selfdrive /tmp/openpilot/selfdrive
 
 COPY SConstruct /tmp/openpilot/SConstruct
-
+RUN git clone https://github.com/opencv/opencv.git && cd opencv && mkdir -p build && cd build && cmake ../ && make && make install && cp -r /usr/local/include/opencv4/opencv2/ /usr/local/include/
 RUN mkdir -p /tmp/openpilot/selfdrive/test/out
 RUN cd /tmp/openpilot && scons -j$(nproc)
