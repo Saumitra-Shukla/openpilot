@@ -15,7 +15,7 @@ arch = subprocess.check_output(["uname", "-m"], encoding='utf8').rstrip()
 if platform.system() == "Darwin":
   arch = "Darwin"
 
-webcam = bool(ARGUMENTS.get("use_webcam", 0))
+webcam = bool(ARGUMENTS.get("use_webcam", 1))
 
 if arch == "aarch64":
   lenv = {
